@@ -66,9 +66,9 @@
         * ✅ UsersModel
         * ✅ RestaurantsModel
         * ✅ LogsModel
-12. Connect with an api to get Restaurants
-13. Connect Models with db
-14. ⬜️ Unit test
+11. Connect with an api to get Restaurants
+12. Connect Models with db
+13. ⬜️ Unit test
     - ✅ Mount structure
     - ✅ Unit test can be run
     - ⬜️ Session.test
