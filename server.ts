@@ -1,8 +1,7 @@
 import express from 'express';
 import * as dotenv from "dotenv";
-import { AuthPayload } from "./src/interfaces"
 import { logger } from './src/utils/logger'
-import { createTokens } from './src/utils/auth'
+import routes from "./src/routes"
 
 /* env setting */
 dotenv.config();
@@ -12,23 +11,11 @@ dotenv.config({ path: path });
 const app: express.Application = express();
 const port = process.env.API_PORT || 3000;
 
+/* Routes */
+app.use(routes);
+
 app.get('/', (req, res) => {
     res.send('This is a backend engineer tyba!');
-});
-
-app.get('/generate-token', (req, res) => {
-
-    logger.trace('Generate token');
-    const tokenData: AuthPayload = {
-        id: 1,
-        name: 'Ed',
-        phone: '3104242101'
-    }
-    const [token, refreshToken] = createTokens({ payload: tokenData, refreshSecret: 'aaaa' });
-
-    res.send({
-        token, refreshToken
-    });
 });
 
 

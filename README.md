@@ -5,7 +5,16 @@
 - ```npm start```
 - Open in your browser ```http://localhost:6001```
 
+## Routes
+
+- ```http://localhost:6001/login```
+- ```http://localhost:6001/logout```
+
 ## Folder Structure & Customization
+`src/routes` : All coding and functions related endpoints.
+
+`src/interfaces` : Interfaces to ts.
+
 `src/controllers` : All coding and functions related controllers.
 
 `src/models` : All coding and functions related models.

@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken"
 import { AuthPayload } from "../interfaces"
 
-const JWT_SECRET_KEY: string = process.env.JWT_SECRET_KEY || 'aaaaa'
+const JWT_SECRET_KEY: string = process.env.JWT_SECRET_KEY || 'jx7B9vHSUcJq6pA'
 const JWT_REFRESH_TOKEN_EXPIRES: string = process.env.JWT_REFRESH_TOKEN_EXPIRES || '1d'
 
 const createToken = ({ payload, secretKey, expiresIn }: { payload: AuthPayload, secretKey: string, expiresIn: string }) => jwt.sign(payload, secretKey, { expiresIn })
