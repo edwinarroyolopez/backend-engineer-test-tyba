@@ -3,6 +3,7 @@
 ## To Run
 - ```npm i```
 - ```npm start```
+- Open in your browser ```http://localhost:6001```
 
 ## Folder Structure & Customization
 `src/controllers` : All coding and functions related controllers.
