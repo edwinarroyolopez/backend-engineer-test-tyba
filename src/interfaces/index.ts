@@ -30,21 +30,12 @@ export interface AuthInput {
     otp?: string
 }
 
-export interface QueryRestaurants {
-    latitude?: string,
-    longitude?: string,
-    city?: string
-}
-
-
-
 export interface QueryMaps {
     lat?: string,
     lng?: string,
     city?: string,
     keyWord?: string
 }
-
 
 export interface AddressComponentMaps {
     long_name?: string,

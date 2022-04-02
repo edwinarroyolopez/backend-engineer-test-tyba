@@ -45,39 +45,45 @@
     - ✅ Handler Logs
     - ✅ Interfaces
     - ✅ Generate tokes
-6. ✅ Create Routes
+5. ✅ Create Routes
     - ✅ Signup
     - ✅ Login
     - ✅ logout
     - ✅ Get restaurants
     - ✅ Get logs
-8. ✅ Create postman collection
-9. ⬜️ Controllers
+6. ✅ Create postman collection
+7. ⬜️ Controllers
     - ✅ Create Controllers
     - ✅ Connect Routes with Controllers
         * ✅ SessionController
         * ✅ UsersController
         * ✅ RestaurantsController
         * ✅ LogsController
-10. ⬜️  Models
+8. ⬜️  Models
     - ✅  Create models
     - ✅ Connect Controllers with Models
         * ✅ SessionModel
         * ✅ UsersModel
         * ✅ RestaurantsModel
         * ✅ LogsModel
-11. ⬜️ Connect with an api to get Restaurants
+9. ✅ Connect with a maps api to get Restaurants
     - ✅ Add Colombia locations
-    - ⬜️ Make a test search Restaurants
-
-12. Connect Models with db
-13. ⬜️ Unit test
+    - ✅ Make a test search Restaurants
+    - ✅ Make a test search by lat, lng and city Restaurants
+10. ⬜️ Connect Models with db
+        - ⬜️ Create a public db
+        - ⬜️ Create tables
+            * ⬜️ Users table
+            * ⬜️ Logs table
+11. ⬜️ Unit test
     - ✅ Mount structure
     - ✅ Unit test can be run
     - ⬜️ Session.test
     - ⬜️ Users.test
     - ⬜️ Restaurants.test
     - ⬜️ Logs.test
+12. ⬜️ DataStudio Reports
+
 
 ## __Status task__
 ⬜️ Pending
