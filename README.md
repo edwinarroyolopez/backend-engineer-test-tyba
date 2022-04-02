@@ -17,8 +17,9 @@
 2. ✅ Install dependencies
 3. ✅ Create a server with express
 4. ⬜️ Utils 
-    - ⬜️ Handler Logs
-    - ⬜️ Generate tokes
+    - ✅ Handler Logs
+    - ✅ Interfaces
+    - ✅ Generate tokes
 6. ⬜️ Create Routes
     - ⬜️ Create a user
     - ⬜️ Login
