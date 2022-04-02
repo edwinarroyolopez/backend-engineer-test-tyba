@@ -1,5 +1,5 @@
 import { logger } from '../utils/logger'
-import { QueryRestaurants } from "../interfaces"
+import { QueryMaps } from "../interfaces"
 
 /**
  * Restaurants Model
@@ -8,11 +8,11 @@ import { QueryRestaurants } from "../interfaces"
 
 /**
   * Get restaurants by latitude and longitude or city
-  * @param {QueryRestaurants} qRestaurants
+  * @param {QueryMaps} qRestaurants
   *
   * @returns {Array}
   */
-export const getRestaurantsModel = async (qRestaurants: QueryRestaurants) => {
+export const getRestaurantsModel = async (qRestaurants: QueryMaps) => {
    logger.debug(`getRestaurantsModel`, { qRestaurants })
 
    try {

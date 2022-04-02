@@ -1,5 +1,5 @@
 import { logger } from '../utils/logger'
-import { QueryRestaurants } from "../interfaces"
+import { QueryMaps } from "../interfaces"
 import { getRestaurantsController } from '../controllers/restaurantsController';
 
 export const getRestaurants = async (req: any, res: any) => {
@@ -10,14 +10,14 @@ export const getRestaurants = async (req: any, res: any) => {
     /* TODO: validate params */
 
     const {
-        latitude,
-        longitude,
+        lat,
+        lng,
         city
     } = query
 
-    const qRestaurants: QueryRestaurants = {
-        latitude,
-        longitude,
+    const qRestaurants: QueryMaps = {
+        lat,
+        lng,
         city
     }
 

@@ -36,3 +36,18 @@ export interface QueryRestaurants {
     city?: string
 }
 
+
+
+export interface QueryMaps {
+    lat?: string,
+    lng?: string,
+    city?: string,
+    keyWord?: string
+}
+
+
+export interface AddressComponentMaps {
+    long_name?: string,
+    short_name?: string,
+    types: [string]
+}

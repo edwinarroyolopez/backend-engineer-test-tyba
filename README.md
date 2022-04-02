@@ -66,7 +66,10 @@
         * ✅ UsersModel
         * ✅ RestaurantsModel
         * ✅ LogsModel
-11. Connect with an api to get Restaurants
+11. ⬜️ Connect with an api to get Restaurants
+    - ✅ Add Colombia locations
+    - ⬜️ Make a test search Restaurants
+
 12. Connect Models with db
 13. ⬜️ Unit test
     - ✅ Mount structure

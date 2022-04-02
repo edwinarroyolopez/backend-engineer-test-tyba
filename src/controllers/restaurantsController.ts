@@ -1,5 +1,6 @@
 import { logger } from '../utils/logger'
-import { QueryRestaurants } from "../interfaces"
+import { QueryMaps } from "../interfaces"
+import { searchPlaces } from '../utils/searchPlaces'
 import { getRestaurantsModel } from '../models/restaurantsModel';
 
 /**
@@ -9,11 +10,14 @@ import { getRestaurantsModel } from '../models/restaurantsModel';
 
 /**
   * Get restaurants by latitude and longitude  or city
-  * @param {QueryRestaurants} qRestaurants
+  * @param {QueryMaps} qRestaurants
   *
   * @returns {Array}
   */
-export const getRestaurantsController = async (qRestaurants: QueryRestaurants) => {
-   logger.debug(`getRestaurantsController`, { qRestaurants })
-   return await getRestaurantsModel(qRestaurants)
+export const getRestaurantsController = async (qRestaurants: QueryMaps) => {
+  logger.debug(`getRestaurantsController`, { qRestaurants })
+  const restaurants = await searchPlaces(qRestaurants)
+  logger.debug(`restarurants`, { restaurants })
+  return restaurants
+  return await getRestaurantsModel(qRestaurants)
 };

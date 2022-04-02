@@ -142,7 +142,7 @@
 					"formdata": []
 				},
 				"url": {
-					"raw": "localhost:6001/get-restaurants?city=Medeilin",
+					"raw": "localhost:6001/get-restaurants?city=Bogota&lat=6.257590259&lng=-75.61103107",
 					"host": [
 						"localhost"
 					],
@@ -153,7 +153,15 @@
 					"query": [
 						{
 							"key": "city",
-							"value": "Medeilin"
+							"value": "Bogota"
+						},
+						{
+							"key": "lat",
+							"value": "6.257590259"
+						},
+						{
+							"key": "lng",
+							"value": "-75.61103107"
 						}
 					]
 				}
