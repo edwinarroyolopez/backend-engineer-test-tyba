@@ -71,10 +71,11 @@
     - ✅ Make a test search Restaurants
     - ✅ Make a test search by lat, lng and city Restaurants
 10. ⬜️ Connect Models with db
-        - ⬜️ Create a public db
-        - ⬜️ Create tables
-            * ⬜️ Users table
-            * ⬜️ Logs table
+    - ⬜️ Create a public db
+    - ⬜️ Create tables
+        * ⬜️ Users table
+        * ⬜️ Logs table
+
 11. ⬜️ Unit test
     - ✅ Mount structure
     - ✅ Unit test can be run
