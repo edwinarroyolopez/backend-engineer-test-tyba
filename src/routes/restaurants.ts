@@ -6,7 +6,7 @@ export const getRestaurants = (req: any, res: any) => {
     const { query } = req
     logger.debug('req', { query })
 
-    /* TODO: validate user */
+    /* TODO: validate params */
 
     const {
         latitude,

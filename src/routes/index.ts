@@ -5,6 +5,10 @@ import {
     logout
  } from './session';
  import { getRestaurants } from './restaurants'
+ import { 
+     getUserLogs,
+     getLogs
+ } from './logs'
 
 const router = Router();
 
@@ -17,5 +21,9 @@ router.get('/logout', logout);
 
 /* restaurants routes */
 router.get('/get-restaurants', getRestaurants);
+
+/* logs routes */
+router.get('/logs/:userId', getUserLogs);
+router.get('/logs', getLogs);
 
 export default router

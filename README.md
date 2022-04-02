@@ -40,7 +40,7 @@
     - ✅ Signup
     - ✅ Login
     - ✅ logout
-    - ⬜️ Get restaurants
+    - ✅ Get restaurants
     - ⬜️ Get logs
 7. Create Controllers
 8. Create models
