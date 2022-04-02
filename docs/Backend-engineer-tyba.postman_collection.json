@@ -54,6 +54,82 @@
 			"response": []
 		},
 		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "phone",
+							"value": "3016453021",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "edwin.antonio.arroyo.lopez@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "abcd.1234",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:6001/login",
+					"host": [
+						"localhost"
+					],
+					"port": "6001",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Otp",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "phone",
+							"value": "3016453021",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "edwin.antonio.arroyo.lopez@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "otp",
+							"value": "987654",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:6001/login",
+					"host": [
+						"localhost"
+					],
+					"port": "6001",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Restaurants",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
