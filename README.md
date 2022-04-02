@@ -40,16 +40,28 @@
     - ✅ Handler Logs
     - ✅ Interfaces
     - ✅ Generate tokes
-6. ⬜️ Create Routes
+6. ✅ Create Routes
     - ✅ Signup
     - ✅ Login
     - ✅ logout
     - ✅ Get restaurants
     - ✅ Get logs
-7. Create Controllers
-8. Create models
-9. Connect with db
-10. ⬜️ Unit test
+8. ✅ Create postman collection
+9. ⬜️ Controllers
+    - ⬜️ Create Controllers
+    - ⬜️ Connect Routes with Controllers
+        * ⬜️ SessionController
+        * ⬜️ UsersController
+        * ⬜️ RestaurantsController
+        * ⬜️ LogsController
+10. ⬜️  Create models
+11. Connect with db
+12. ⬜️ Unit test
+    - ✅ Mount structure
+    - ⬜️ Session.test
+    - ⬜️ Users.test
+    - ⬜️ Restaurants.test
+    - ⬜️ Logs.test
 
 ## __Status task__
 ⬜️ Pending
