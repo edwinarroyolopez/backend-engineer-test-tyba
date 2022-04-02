@@ -7,8 +7,12 @@
 
 ## Routes
 
+- ```http://localhost:6001/signup```
 - ```http://localhost:6001/login```
 - ```http://localhost:6001/logout```
+- ```http://localhost:6001/get-restaurants```
+- ```http://localhost:6001/logs/userId```
+- ```http://localhost:6001/logs```
 
 
 ## Postman collection
@@ -41,7 +45,7 @@
     - ✅ Login
     - ✅ logout
     - ✅ Get restaurants
-    - ⬜️ Get logs
+    - ✅ Get logs
 7. Create Controllers
 8. Create models
 9. Connect with db
