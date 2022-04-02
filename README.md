@@ -19,7 +19,7 @@
 ![][1]
 
 `docs/Backend-engineer-tyba.postman_collection.json`: Postman collection route
-## Folder Structure & Customization
+## Folder Structure
 `src/routes` : All coding and functions related endpoints.
 
 `src/interfaces` : Interfaces to ts.
@@ -29,6 +29,8 @@
 `src/models` : All coding and functions related models.
 
 `src/utils` : All coding and functions related utils.
+
+`test` : All coding and functions related unit test.
 
 `docs` : All about documentation
 
