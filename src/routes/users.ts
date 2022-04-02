@@ -5,6 +5,8 @@ export const signup = (req: any, res: any) => {
     logger.trace('Signup');
     const { body } = req
     logger.debug('req', { body })
+
+    /* TODO: validate user */
     
     const {
         name,

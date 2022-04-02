@@ -13,7 +13,8 @@
 
 ## Postman collection
 ![][1]
-`Backend-engineer-tyba.postman_collection.json`: Postman collection route
+
+`docs/Backend-engineer-tyba.postman_collection.json`: Postman collection route
 ## Folder Structure & Customization
 `src/routes` : All coding and functions related endpoints.
 
@@ -54,5 +55,5 @@
 ⭐️ _Difficulty Level_
 
 
-
+[comment]: <> (Sources readme)
 [1]:https://scontent-bog1-1.xx.fbcdn.net/v/t1.6435-1/107800951_3061159633962395_886217213345086584_n.png?stp=dst-png_p148x148&_nc_cat=101&ccb=1-5&_nc_sid=1eb0c7&_nc_eui2=AeGigQfDMoENaCpINbK8Z-gg18wthNFdaSXXzC2E0V1pJfDDqVooa7gG0mGZo3WR9YSCp80oz4jSGzeztvyp20kU&_nc_ohc=x8XYgestwLoAX9-SFJl&_nc_ht=scontent-bog1-1.xx&oh=00_AT-vxavQCU-hwDhH7BmSwum26GLPYe6F8ygYL55CzsJn3w&oe=626FA8D5
