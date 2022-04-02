@@ -1,7 +1,8 @@
 import { logger } from '../utils/logger'
 import { QueryRestaurants } from "../interfaces"
+import { getRestaurantsController } from '../controllers/restaurantsController';
 
-export const getRestaurants = (req: any, res: any) => {
+export const getRestaurants = async (req: any, res: any) => {
     logger.trace('getRestaurants');
     const { query } = req
     logger.debug('req', { query })
@@ -13,16 +14,14 @@ export const getRestaurants = (req: any, res: any) => {
         longitude,
         city
     } = query
-    
+
     const qRestaurants: QueryRestaurants = {
         latitude,
         longitude,
         city
     }
 
-    res.send({
-        action: 'get-restaurants',
-        restaurants: [{ qRestaurants }],
-        success: true
-    });
+    const response = await getRestaurantsController(qRestaurants)
+
+    res.send(response);
 }

@@ -54,15 +54,23 @@
 8. ✅ Create postman collection
 9. ⬜️ Controllers
     - ✅ Create Controllers
-    - ⬜️ Connect Routes with Controllers
-        * ⬜️ SessionController
-        * ⬜️ UsersController
-        * ⬜️ RestaurantsController
-        * ⬜️ LogsController
-10. ⬜️  Create models
-11. Connect with db
-12. ⬜️ Unit test
+    - ✅ Connect Routes with Controllers
+        * ✅ SessionController
+        * ✅ UsersController
+        * ✅ RestaurantsController
+        * ✅ LogsController
+10. ⬜️  Models
+    - ✅  Create models
+    - ✅ Connect Controllers with Models
+        * ✅ SessionModel
+        * ✅ UsersModel
+        * ✅ RestaurantsModel
+        * ✅ LogsModel
+12. Connect with an api to get Restaurants
+13. Connect Models with db
+14. ⬜️ Unit test
     - ✅ Mount structure
+    - ✅ Unit test can be run
     - ⬜️ Session.test
     - ⬜️ Users.test
     - ⬜️ Restaurants.test

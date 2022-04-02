@@ -1,15 +1,15 @@
 export interface AuthPayload {
-    id: number,
-    name: string,
+    id?: number,
+    name?: string,
     phone?: string,
     email?: string
 }
 
 export interface UserInput {
-    id?: number,
     name: string,
     phone?: string,
     email?: string,
+    password?: string,
     address?: string,
     city?: string
 }

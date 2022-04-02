@@ -1,7 +1,7 @@
 import { logger } from '../utils/logger'
-import { QueryRestaurants } from "../interfaces"
+import { getUserLogsController, getLogsController } from '../controllers/logsController';
 
-export const getUserLogs = (req: any, res: any) => {
+export const getUserLogs = async (req: any, res: any) => {
     logger.trace('getUserLogs');
     const { query, params } = req
     logger.debug('req', { query, params })
@@ -11,25 +11,21 @@ export const getUserLogs = (req: any, res: any) => {
     const {
         userId
     } = params
-    
-    res.send({
-        action: 'get-logs-by-user',
-        logs: [`Logs user ${userId}`],
-        success: true
-    });
+
+    const response = await getUserLogsController(userId)
+
+    res.send(response);
 }
 
-export const getLogs = (req: any, res: any) => {
+export const getLogs = async (req: any, res: any) => {
     logger.trace('getLogs');
     const { query, params } = req
     logger.debug('req', { query, params })
 
     /* TODO: limit */
     /* TODO: order */
+    const { limit, order }: { limit: string, order: string } = { limit: '10', order: 'asc' }
 
-    res.send({
-        action: 'get-all-logs',
-        logs: [`Àll logs`],
-        success: true
-    });
+    const response = await getLogsController({ limit, order })
+    res.send(response);
 }

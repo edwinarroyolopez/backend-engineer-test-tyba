@@ -1,22 +1,28 @@
 import { logger } from '../utils/logger'
-import { AuthPayload } from "../interfaces"
-import { createTokens } from '../utils/auth'
+import { AuthInput } from "../interfaces"
+import { loginController } from '../controllers/sessionController'
 
-export const login = (req: any, res: any) => {
+export const login = async (req: any, res: any) => {
     logger.trace('Login token');
-    const tokenData: AuthPayload = {
-        id: 1,
-        name: 'Ed',
-        phone: '3104242101'
-    }
-    const [token, refreshToken] = createTokens({ payload: tokenData, refreshSecret: 'aaaa' });
-    logger.debug(`Generated tokens`, { token, refreshToken });
+    
+    const { body } = req
 
-    res.send({
-        action: 'login',
-        token,
-        refreshToken
-    });
+    const {
+        phone,
+        email,
+        password,
+        otp
+    } = body
+   
+    const auth: AuthInput = {
+        phone,
+        email,
+        password,
+        otp
+    }
+
+    const response = await loginController(auth)
+    res.send({response});
 }
 
 export const logout = (req: any, res: any) => {

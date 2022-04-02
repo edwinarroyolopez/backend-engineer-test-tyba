@@ -16,8 +16,8 @@ const router = Router();
 router.post('/signup', signup);
 
 /* session routes */
-router.get('/login', login);
-router.get('/logout', logout);
+router.post('/login', login);
+router.post('/logout', logout);
 
 /* restaurants routes */
 router.get('/get-restaurants', getRestaurants);

@@ -1,10 +1,10 @@
 import { logger } from '../utils/logger'
-import { User } from "../interfaces"
+import { UserInput } from "../interfaces"
+import { signupController } from '../controllers/usersController'
 
-export const signup = (req: any, res: any) => {
+export const signup = async (req: any, res: any) => {
     logger.trace('Signup');
     const { body } = req
-    logger.debug('req', { body })
 
     /* TODO: validate user */
 
@@ -12,23 +12,19 @@ export const signup = (req: any, res: any) => {
         name,
         phone,
         email,
+        password,
         address,
         city
     } = body
 
-    const user: User = {
+    const user: UserInput = {
         name,
         phone,
         email,
+        password,
         address,
         city
     }
-
-    logger.debug(`Signup`, { user });
-
-    res.send({
-        action: 'signup',
-        message: `User registered ${user.name}`,
-        success: true
-    });
+    const response = await signupController(user)
+    res.send(response);
 }
