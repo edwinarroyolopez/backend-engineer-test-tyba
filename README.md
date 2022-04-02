@@ -1,5 +1,7 @@
 # Backend Engineer Test
 
+```node --version v13.14.0```
+
 ## To Run
 - ```npm i```
 - ```npm start```
@@ -32,6 +34,8 @@
 `src/models` : All coding and functions related models.
 
 `src/utils` : All coding and functions related utils.
+
+`src/database` : Conexion to database
 
 `test` : All coding and functions related unit test.
 
@@ -70,21 +74,27 @@
     - ✅ Add Colombia locations
     - ✅ Make a test search Restaurants
     - ✅ Make a test search by lat, lng and city Restaurants
-10. ⬜️ Connect Models with db
-    - ⬜️ Create a public db
-    - ⬜️ Create tables
-        * ⬜️ Users table
-        * ⬜️ Logs table
-
-11. ⬜️ Unit test
+10. ✅ Connect Models with db
+    - ✅ Create a public db
+    - ✅ Create tables
+        * ✅ Users table
+        * ✅ Logs table
+11. ⬜️ Database Operations
+    - ✅ Create user
+    - ⬜️ Find user to login
+    - ⬜️ Find all users
+    - ⬜️ Create a Log
+    - ⬜️ Create a Log to Logout
+    - ⬜️ Create a Log to Map Search
+    - ⬜️ Find logs
+12. ⬜️ Unit test
     - ✅ Mount structure
     - ✅ Unit test can be run
     - ⬜️ Session.test
     - ⬜️ Users.test
     - ⬜️ Restaurants.test
     - ⬜️ Logs.test
-12. ⬜️ DataStudio Reports
-
+13. ⬜️ DataStudio Reports
 
 ## __Status task__
 ⬜️ Pending

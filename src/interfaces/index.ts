@@ -20,7 +20,9 @@ export interface User {
     phone?: string,
     email?: string,
     address?: string,
-    city?: string
+    city?: string,
+    created_at?: string,
+    updated_at?: string
 }
 
 export interface AuthInput {

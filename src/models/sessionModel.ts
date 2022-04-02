@@ -1,6 +1,8 @@
 
+import bcrypt from "bcrypt";
 import { AuthInput, AuthPayload } from '../interfaces/index'
 import { logger } from '../utils/logger'
+import { queryHandler, SCHEMA } from "../database/db";
 
 /**
  * Session model
@@ -16,20 +18,33 @@ export const loginModel = async (auth: AuthInput) => {
   logger.debug(`loginModel`, auth)
 
   try {
-    //throw 'Wrong in credentials!';
-    const { name, phone }: AuthPayload = auth
+    const { email, phone, password, otp } = auth
 
-    return await {
-      tokenData: { name, phone },
-      success: true,
-      error: {}
+    const { rows } = await queryHandler(
+      `SELECT * FROM ${SCHEMA}.user where email = '${email}' OR phone = '${phone}'`,
+      []
+    );
+
+    if (rows.length) {
+      const { password: hash, ...user } = rows[0];
+      const valid = bcrypt.compareSync(password || '', hash);
+      if (valid) {
+        logger.info('User valid', valid)
+        return await {
+          user: user || {},
+          success: true,
+          error: {}
+        }
+      }
     }
+
+    throw new Error(`User not found!`)
 
   } catch (error) {
     logger.error(`loginModel`, { error })
     return {
       success: false,
-      tokenData: {},
+      user: {},
       error: error
     }
   }

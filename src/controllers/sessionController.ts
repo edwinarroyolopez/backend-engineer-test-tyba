@@ -1,5 +1,5 @@
 
-import { AuthInput, AuthPayload } from '../interfaces/index'
+import { AuthInput, AuthPayload, User } from '../interfaces/index'
 import { logger } from '../utils/logger'
 import { createTokens } from '../utils/auth'
 import { loginModel } from '../models/sessionModel';
@@ -19,16 +19,22 @@ export const loginController = async (auth: AuthInput) => {
 
   try {
 
-    const response = await loginModel(auth)
+    const response:any = await loginModel(auth)
 
     const {
-      tokenData,
+      user,
       success,
       error
-    }: { tokenData: AuthPayload, success: boolean, error: any } = response
+    }: {
+      user: User,
+      success: boolean,
+      error: any
+    } = response
 
     if (success) {
-      const [token, refreshToken] = createTokens({ payload: tokenData, refreshSecret: 'aaaa' });
+      // const refreshSecret = process.env.JWT_REFRESH_KEY + user.id;
+      
+      const [token, refreshToken] = createTokens({ payload: user || '', refreshSecret: 'aaaa' });
       return {
         token,
         refreshToken,
