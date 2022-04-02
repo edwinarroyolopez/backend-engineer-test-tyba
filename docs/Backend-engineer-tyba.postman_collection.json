@@ -1,0 +1,57 @@
+{
+	"info": {
+		"_postman_id": "fbb2c596-666c-4d9e-b078-027a4198e9c3",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "Ed",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "3016453021",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "edwin.antonio.arroyo.lopez@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "Calle 44 # 105-10",
+							"type": "text"
+						},
+						{
+							"key": "city",
+							"value": "Medellin",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:6001/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "6001",
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
