@@ -5,6 +5,9 @@
 - ```npm start```
 - Open in your browser ```http://localhost:6001```
 
+## To Run Unit Test
+- ```npm run test```
+
 ## Routes
 
 - ```http://localhost:6001/signup```
@@ -50,7 +53,7 @@
     - ✅ Get logs
 8. ✅ Create postman collection
 9. ⬜️ Controllers
-    - ⬜️ Create Controllers
+    - ✅ Create Controllers
     - ⬜️ Connect Routes with Controllers
         * ⬜️ SessionController
         * ⬜️ UsersController

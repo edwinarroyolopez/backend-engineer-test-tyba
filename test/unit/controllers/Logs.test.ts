@@ -1,16 +1,16 @@
 import { logger } from '../../../src/utils/logger'
 import {
-    getUserLogsController,
-    getLogsController
+  getUserLogsController,
+  getLogsController
 } from '../../../src/controllers/logsController'
 
 describe('SessionController', () => {
 
-  beforeEach(async function() {
+  beforeEach(async function () {
     logger.info(`Before Each: Logs.test.ts`)
   })
 
-  afterEach(async function() {
+  afterEach(async function () {
     logger.info(`After Each: Logs.test.ts`)
   })
 
@@ -22,5 +22,14 @@ describe('SessionController', () => {
   /**
    * Success
    */
+  const sum = (a: number, b: number): number => {
+    return a + b
+  }
+
+
+  test('adds 1 + 2 to equal 3', () => {
+    expect(sum(1, 2)).toBe(3);
+  });
+
 
 })
