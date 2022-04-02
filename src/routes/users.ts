@@ -7,7 +7,7 @@ export const signup = (req: any, res: any) => {
     logger.debug('req', { body })
 
     /* TODO: validate user */
-    
+
     const {
         name,
         phone,
@@ -24,20 +24,11 @@ export const signup = (req: any, res: any) => {
         city
     }
 
-
     logger.debug(`Signup`, { user });
 
     res.send({
         action: 'signup',
         message: `User registered ${user.name}`,
         success: true
-    });
-}
-
-export const logout = (req: any, res: any) => {
-    logger.trace('Logout token');
-    res.send({
-        action: 'logout',
-        message: 'Closing session...'
     });
 }

@@ -13,3 +13,11 @@ export interface User {
     address?: string,
     city?: string
 }
+
+
+export interface QueryRestaurants {
+    latitude?: string,
+    longitude?: string,
+    city?: string
+}
+
