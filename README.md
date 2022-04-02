@@ -56,14 +56,14 @@
     - ✅ Get restaurants
     - ✅ Get logs
 6. ✅ Create postman collection
-7. ⬜️ Controllers
+7. ✅ Controllers
     - ✅ Create Controllers
     - ✅ Connect Routes with Controllers
         * ✅ SessionController
         * ✅ UsersController
         * ✅ RestaurantsController
         * ✅ LogsController
-8. ⬜️  Models
+8. ✅  Models
     - ✅  Create models
     - ✅ Connect Controllers with Models
         * ✅ SessionModel
@@ -81,20 +81,23 @@
         * ✅ Logs table
 11. ⬜️ Database Operations
     - ✅ Create user
-    - ⬜️ Find user to login
-    - ⬜️ Find all users
+    - ✅ Find user to login
+    - ✅ Find all users
     - ⬜️ Create a Log
     - ⬜️ Create a Log to Logout
     - ⬜️ Create a Log to Map Search
     - ⬜️ Find logs
-12. ⬜️ Unit test
+12. ⬜️ Use Auth with token
+    - ⬜️ Public routes
+    - ⬜️ Privete routes
+13. ⬜️ Unit test
     - ✅ Mount structure
     - ✅ Unit test can be run
     - ⬜️ Session.test
     - ⬜️ Users.test
     - ⬜️ Restaurants.test
     - ⬜️ Logs.test
-13. ⬜️ DataStudio Reports
+14. ⬜️ DataStudio Reports
 
 ## __Status task__
 ⬜️ Pending

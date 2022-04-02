@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { signup } from './users'
+import { signup, getAllUsers } from './users'
 import { 
     login,
     logout
@@ -14,6 +14,7 @@ const router = Router();
 
 /* users routes */
 router.post('/signup', signup);
+router.get('/get-users', getAllUsers);
 
 /* session routes */
 router.post('/login', login);

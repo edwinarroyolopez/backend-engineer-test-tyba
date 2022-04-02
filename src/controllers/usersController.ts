@@ -1,6 +1,6 @@
 import { UserInput } from '../interfaces/index'
 import { logger } from '../utils/logger'
-import { signupModel } from '../models/usersModel';
+import { signupModel, getAllUsersModel } from '../models/usersModel';
 /**
  * Users controller
  * @test test/unit/controllers/Users.test.ts
@@ -15,4 +15,9 @@ import { signupModel } from '../models/usersModel';
 export const signupController = async (user: UserInput) => {
    logger.debug(`signupController`, { user })
    return await signupModel(user)
+};
+
+export const getAllUsersController = async () => {
+  logger.debug(`getAllUsersController`)
+  return await getAllUsersModel()
 };

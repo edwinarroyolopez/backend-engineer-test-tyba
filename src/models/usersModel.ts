@@ -77,6 +77,37 @@ export const signupModel = async (user: UserInput) => {
   }
 };
 
+
+/**
+  * Get all users
+  * @returns {Object}
+  */
+ export const getAllUsersModel = async (): Promise<any> => {
+  logger.debug('getAllUsersModel')
+
+  try {
+    const { rows } = await queryHandler(
+      `SELECT 
+        name,
+        phone,
+        email,
+        address,
+        city,
+        created_at
+      FROM ${SCHEMA}.user order by id desc`,
+      []
+    );
+    return {
+      success: true,
+      users: rows
+    };
+
+  } catch (error) {
+    logger.error('getAllUsersModel', error)
+    return { success: false, error: error, users:[] };
+  }
+};
+
 /**
   * Verify a new user
   * @param {string} email
@@ -107,3 +138,4 @@ const verifyUser = async ({ email, phone }: { email: string, phone: string }): P
     return { success: false, error: error };
   }
 };
+
