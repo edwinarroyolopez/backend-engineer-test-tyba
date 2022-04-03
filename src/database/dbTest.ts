@@ -23,6 +23,7 @@ const keyQuerys = [
   'INSERT INTO backendengineertyba.user',
   'INSERT INTO backendengineertyba.log',
   'SELECT * FROM backendengineertyba.user where email',
+  'SELECT * FROM backendengineertyba.user where email=',
   'SELECT          data,         type,         user_id,         created_at       FROM'
 ]
 
@@ -31,6 +32,22 @@ const responseQuerys = [
     key: 'SELECT * FROM backendengineertyba.user where email',
     res: {
       rows: []
+    }
+  },
+  {
+    key: 'SELECT * FROM backendengineertyba.user where email=',
+    res: {
+      rows: [
+        {
+          id: Math.floor(Math.random() * 10000),
+          name: 'Ed',
+          phone: '3016453021',
+          email: `ed@gmail.com`,
+          address: 'Calle 44 # 105-10',
+          city: 'Medellin',
+          password: 'abcd.1234'
+        }
+      ]
     }
   },
   {
@@ -75,4 +92,6 @@ const responseQuerys = [
     }
   }
 ]
+
+
 

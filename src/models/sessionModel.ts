@@ -21,7 +21,7 @@ export const loginModel = async (auth: AuthInput) => {
     const { email, phone, password, otp } = auth
 
     const { rows } = await queryHandler(
-      `SELECT * FROM ${SCHEMA}.user where email = '${email}' OR phone = '${phone}'`,
+      `SELECT * FROM ${SCHEMA}.user where email= '${email}' OR phone = '${phone}'`,
       []
     );
 

@@ -3,6 +3,7 @@ import {
     loginController,
     logoutController
 } from '../../../src/controllers/sessionController'
+import { assert } from 'chai'
 
 describe('SessionController', () => {
 
@@ -22,14 +23,18 @@ describe('SessionController', () => {
   /**
    * Success
    */
+   it('.login:  should make login  with a email and pass', async () => {
+    const ran= Math.floor(Math.random() * 10000)
+    const user = {
+      phone: '3016453021',
+      email: 'ed@gmail.com',
+      password: 'abcd.1234',
+      otp: '',
+    }
+    const response = await loginController(user)
+    logger.info('response', response)
+    assert.equal(response.success, false)
+  })
 
-   const sum = (a: number, b: number): number => {
-    return a + b
-  }
-
-
-  test('adds 1 + 2 to equal 3', () => {
-    expect(sum(1, 2)).toBe(3);
-  });
   
 })
