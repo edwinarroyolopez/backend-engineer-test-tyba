@@ -1,7 +1,8 @@
 
-import { AuthInput, AuthPayload, User } from '../interfaces/index'
+import { AuthInput, User } from '../interfaces/index'
 import { logger } from '../utils/logger'
 import { createTokens } from '../utils/auth'
+import { createLogModel } from '../models/logsModel'
 import { loginModel } from '../models/sessionModel';
 /**
  * Session controller
@@ -19,7 +20,7 @@ export const loginController = async (auth: AuthInput) => {
 
   try {
 
-    const response:any = await loginModel(auth)
+    const response: any = await loginModel(auth)
 
     const {
       user,
@@ -33,8 +34,15 @@ export const loginController = async (auth: AuthInput) => {
 
     if (success) {
       // const refreshSecret = process.env.JWT_REFRESH_KEY + user.id;
-      
+
       const [token, refreshToken] = createTokens({ payload: user || '', refreshSecret: 'aaaa' });
+
+      await createLogModel({
+        data: response,
+        user_id: 1,
+        type: 'login'
+      })
+
       return {
         token,
         refreshToken,
@@ -56,5 +64,11 @@ export const loginController = async (auth: AuthInput) => {
 
 export const logoutController = async ({ param }: any) => {
   logger.debug(`logoutController`)
+  await createLogModel({
+    data: {},
+    user_id: 1,
+    type: 'logout'
+  })
+
   //return await logoutModel({ param })
 };

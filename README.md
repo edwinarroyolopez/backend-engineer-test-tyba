@@ -83,13 +83,13 @@
     - ✅ Create user
     - ✅ Find user to login
     - ✅ Find all users
-    - ⬜️ Create a Log
+    - ✅ Create a Log
     - ⬜️ Create a Log to Logout
     - ⬜️ Create a Log to Map Search
-    - ⬜️ Find logs
+    - ✅ Find logs
 12. ⬜️ Use Auth with token
     - ⬜️ Public routes
-    - ⬜️ Privete routes
+    - ⬜️ Private routes
 13. ⬜️ Unit test
     - ✅ Mount structure
     - ✅ Unit test can be run

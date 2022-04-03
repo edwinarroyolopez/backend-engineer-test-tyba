@@ -32,6 +32,13 @@ export interface AuthInput {
     otp?: string
 }
 
+
+export interface LogInput {
+    data?: {},
+    type?: string,
+    user_id: number
+}
+
 export interface QueryMaps {
     lat?: string,
     lng?: string,

@@ -24,7 +24,7 @@ export const getLogs = async (req: any, res: any) => {
 
     /* TODO: limit */
     /* TODO: order */
-    const { limit, order }: { limit: string, order: string } = { limit: '10', order: 'asc' }
+    const { limit, order }: { limit: string, order: string } = { limit: '10', order: 'desc' }
 
     const response = await getLogsController({ limit, order })
     res.send(response);
