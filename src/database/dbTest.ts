@@ -21,6 +21,7 @@ export const queryHandlerTest = async (...args: any): Promise<any> => {
 
 const keyQuerys = [
   'INSERT INTO backendengineertyba.user',
+  'INSERT INTO backendengineertyba.log',
   'SELECT * FROM backendengineertyba.user where email'
 ]
 
@@ -43,6 +44,18 @@ const responseQuerys = [
           address: 'Calle 44 # 105-10',
           city: 'Medellin',
           password: ''
+        }
+      ]
+    }
+  },
+  {
+    key: 'INSERT INTO backendengineertyba.log',
+    res: {
+      rows: [
+        {
+          id: Math.floor(Math.random() * 10000),
+          data: {},
+          type: 'log'
         }
       ]
     }
