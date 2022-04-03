@@ -18,14 +18,21 @@ export const signupController = async (user: UserInput) => {
   logger.debug(`signupController`, { user })
 
   const response = await signupModel(user)
-  
-  await createLogModel({
-    data: response,
-    user_id: 1,
-    type: 'signup'
-  })
+  try {
 
-  return await response
+    const { userRegistered }: any = response
+    logger.error(`signupController`, { userRegistered })
+    await createLogModel({
+      data: response,
+      user_id: userRegistered?.id || '',
+      type: 'signup'
+    })
+
+    return await response
+  } catch (error) {
+    logger.error(`signupController`, { error })
+    return response
+  }
 };
 
 /**
@@ -36,10 +43,10 @@ export const getAllUsersController = async () => {
   logger.debug(`getAllUsersController`)
 
   const response = await getAllUsersModel()
-
+  const { userRegistered } = response
   await createLogModel({
     data: response,
-    user_id: 1,
+    user_id: userRegistered?.id || '',
     type: 'get-all-users'
   })
 

@@ -1,15 +1,16 @@
 import { logger } from '../../../src/utils/logger'
+import { assert } from 'chai'
 import {
-    signupController
+  signupController
 } from '../../../src/controllers/usersController'
 
 describe('SessionController', () => {
 
-  beforeEach(async function() {
+  beforeEach(async function () {
     logger.info(`Before Each: Session.test.ts`)
   })
 
-  afterEach(async function() {
+  afterEach(async function () {
     logger.info(`After Each: Session.test.ts`)
   })
 
@@ -21,13 +22,19 @@ describe('SessionController', () => {
   /**
    * Success
    */
+  it('.signup:  should save the user into the Db', async () => {
+    const ran= Math.floor(Math.random() * 10000)
+    const user = {
+      name: 'Ed',
+      phone: '3016453021',
+      email: `ed${ran}@gmail.com`,
+      address: 'Calle 44 # 105-10',
+      city: 'Medellin',
+      password: 'abcd.1234'
+    }
+    const response = await signupController(user)
+    logger.info('response', response)
+    assert.equal(response.success, false)
+  })
 
-   const sum = (a: number, b: number): number => {
-    return a + b
-  }
-
-
-  test('adds 1 + 2 to equal 3', () => {
-    expect(sum(1, 2)).toBe(3);
-  });
 })

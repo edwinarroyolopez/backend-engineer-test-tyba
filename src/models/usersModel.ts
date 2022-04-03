@@ -66,7 +66,8 @@ export const signupModel = async (user: UserInput) => {
     return await {
       action: 'signup',
       success: true,
-      message: `User registered ${user.name}`
+      message: `User registered ${user.name}`,
+      userRegistered: userRegistered
     }
   } catch (error) {
     logger.error(`signupModel`, { error })

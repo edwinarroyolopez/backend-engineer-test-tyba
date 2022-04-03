@@ -5,7 +5,7 @@
   "main": "server.ts",
   "scripts": {
     "start": "NODE_ENV=dev nodemon server.ts",
-    "test": "jest --coverage"
+    "test": "NODE_ENV=test jest --coverage"
   },
   "keywords": [],
   "author": "",
@@ -24,12 +24,15 @@
   "dependencies": {
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-typescript": "^7.16.7",
+    "@sendgrid/mail": "^7.6.2",
     "@types/axios": "^0.14.0",
     "@types/bcrypt": "^5.0.0",
+    "@types/chai": "^4.3.0",
     "@types/node": "^17.0.23",
     "@types/pg": "^8.6.5",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.2",
+    "chai": "^4.3.6",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "jsonwebtoken": "^8.5.1",

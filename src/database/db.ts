@@ -1,11 +1,15 @@
+import { Pool } from "pg";
 /* config env */
 let path = "../../.env";
+
+let env: any = process.env["NODE_ENV"];
+console.log({ env })
 
 require("dotenv").config({
   path: `${__dirname}/${path}`,
 });
 
-import { Pool } from "pg";
+
 const { DB_USER, DB_PASS, DB_HOST, DB_PORT, DB_NAME, DB_SCHEMA } = process.env;
 export const SCHEMA = DB_SCHEMA;
 
