@@ -70,5 +70,10 @@ export const logoutController = async ({ param }: any) => {
     type: 'logout'
   })
 
+  return await {
+    action: 'logout',
+    message: 'Closing session...'
+  }
+
   //return await logoutModel({ param })
 };

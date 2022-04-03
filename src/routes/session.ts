@@ -1,6 +1,6 @@
 import { logger } from '../utils/logger'
 import { AuthInput } from "../interfaces"
-import { loginController } from '../controllers/sessionController'
+import { loginController, logoutController } from '../controllers/sessionController'
 
 export const login = async (req: any, res: any) => {
     logger.trace('Login token');
@@ -22,13 +22,12 @@ export const login = async (req: any, res: any) => {
     }
 
     const response = await loginController(auth)
-    res.send({response});
+    res.send(response);
 }
 
-export const logout = (req: any, res: any) => {
+export const logout = async (req: any, res: any) => {
     logger.trace('Logout token');
-    res.send({
-        action: 'logout',
-        message: 'Closing session...'
-    });
+    const param = ''
+    const response = await logoutController(param)
+    res.send(response);
 }

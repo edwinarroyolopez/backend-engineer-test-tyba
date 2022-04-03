@@ -16,6 +16,7 @@
 - ```http://localhost:6001/login```
 - ```http://localhost:6001/logout```
 - ```http://localhost:6001/get-restaurants```
+- ```http://localhost:6001/get-users```
 - ```http://localhost:6001/logs/userId```
 - ```http://localhost:6001/logs```
 
@@ -73,21 +74,22 @@
 9. ✅ Connect with a maps api to get Restaurants
     - ✅ Add Colombia locations
     - ✅ Make a test search Restaurants
-    - ✅ Make a test search by lat, lng and city Restaurants
+    - ✅ Make a test search by lat, lng and city Restaurants ⭐️ ⭐️
 10. ✅ Connect Models with db
     - ✅ Create a public db
     - ✅ Create tables
         * ✅ Users table
         * ✅ Logs table
-11. ⬜️ Database Operations
+11. ✅ Database Operations
     - ✅ Create user
     - ✅ Find user to login
     - ✅ Find all users
     - ✅ Create a Log
-    - ⬜️ Create a Log to Logout
-    - ⬜️ Create a Log to Map Search
+    - ✅ Create a Log to Logout
+    - ✅ Create a Log to Map Search
     - ✅ Find logs
 12. ⬜️ Use Auth with token
+    - ⬜️ Send token in headers
     - ⬜️ Public routes
     - ⬜️ Private routes
 13. ⬜️ Unit test
