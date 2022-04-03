@@ -37,6 +37,11 @@
 							"key": "city",
 							"value": "Medellin",
 							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "abcd.1234",
+							"type": "text"
 						}
 					]
 				},
@@ -55,6 +60,18 @@
 		},
 		{
 			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var res = pm.response.json();",
+							"pm.globals.set('token', res.token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -93,6 +110,18 @@
 		},
 		{
 			"name": "Login Otp",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var res = pm.response.json();",
+							"pm.globals.set('token', res.token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -130,11 +159,53 @@
 			"response": []
 		},
 		{
-			"name": "Restaurants",
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "localhost:6001/logout",
+					"host": [
+						"localhost"
+					],
+					"port": "6001",
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Users",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -142,7 +213,42 @@
 					"formdata": []
 				},
 				"url": {
-					"raw": "localhost:6001/get-restaurants?city=Bogota&lat=6.257590259&lng=-75.61103107",
+					"raw": "localhost:6001/get-users",
+					"host": [
+						"localhost"
+					],
+					"port": "6001",
+					"path": [
+						"get-users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Restaurants",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "localhost:6001/get-restaurants?city=Cartagena&lat=6.257590259&lng=-75.61103107",
 					"host": [
 						"localhost"
 					],
@@ -153,7 +259,7 @@
 					"query": [
 						{
 							"key": "city",
-							"value": "Bogota"
+							"value": "Cartagena"
 						},
 						{
 							"key": "lat",
@@ -174,6 +280,16 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -181,14 +297,14 @@
 					"formdata": []
 				},
 				"url": {
-					"raw": "localhost:6001/logs/4",
+					"raw": "localhost:6001/logs/6",
 					"host": [
 						"localhost"
 					],
 					"port": "6001",
 					"path": [
 						"logs",
-						"4"
+						"6"
 					]
 				}
 			},
@@ -200,6 +316,16 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
