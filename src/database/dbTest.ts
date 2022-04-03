@@ -22,7 +22,8 @@ export const queryHandlerTest = async (...args: any): Promise<any> => {
 const keyQuerys = [
   'INSERT INTO backendengineertyba.user',
   'INSERT INTO backendengineertyba.log',
-  'SELECT * FROM backendengineertyba.user where email'
+  'SELECT * FROM backendengineertyba.user where email',
+  'SELECT          data,         type,         user_id,         created_at       FROM'
 ]
 
 const responseQuerys = [
@@ -59,5 +60,19 @@ const responseQuerys = [
         }
       ]
     }
+  },
+  {
+    key: 'SELECT          data,         type,         user_id,         created_at       FROM',
+    res: {
+      rows: [
+        {
+          data: {},
+          user_id: 10,
+          created_at: new Date(),
+          type: 'logs-by-user'
+        }
+      ]
+    }
   }
 ]
+

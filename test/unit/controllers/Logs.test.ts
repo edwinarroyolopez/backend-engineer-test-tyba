@@ -1,8 +1,9 @@
 import { logger } from '../../../src/utils/logger'
 import {
   getUserLogsController,
-  getLogsController
+  getLogsController,  
 } from '../../../src/controllers/logsController'
+import { assert } from 'chai'
 
 describe('SessionController', () => {
 
@@ -22,14 +23,16 @@ describe('SessionController', () => {
   /**
    * Success
    */
-  const sum = (a: number, b: number): number => {
-    return a + b
-  }
-
-
-  test('adds 1 + 2 to equal 3', () => {
-    expect(sum(1, 2)).toBe(3);
-  });
+  
+  /**
+   * Success
+   */
+   it('.getUserLogsController:  should get the logs from userId  the Db', async () => {
+    const userId = '10'
+    const response = await getUserLogsController(userId)
+    logger.info('response', response)
+    assert.equal(response.success, true)
+  })
 
 
 })
