@@ -19,6 +19,7 @@ create table backendengineertyba.user
     password text,
     address text,
     city text,
+    last_session_operation text,
     created_at          timestamp default now(),
     updated_at          timestamp default now()
 );

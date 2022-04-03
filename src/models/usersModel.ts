@@ -48,8 +48,9 @@ export const signupModel = async (user: UserInput) => {
         password,
         address,
         city,
+        last_session_operation,
         created_at
-    ) values ($1, $2, $3, $4, $5, $6, current_timestamp)  returning *`,
+    ) values ($1, $2, $3, $4, $5, $6, 'signup',current_timestamp)  returning *`,
       [name,
         phone,
         email,

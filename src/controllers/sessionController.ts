@@ -3,7 +3,7 @@ import { AuthInput, User } from '../interfaces/index'
 import { logger } from '../utils/logger'
 import { createTokens } from '../utils/auth'
 import { createLogModel } from '../models/logsModel'
-import { loginModel } from '../models/sessionModel';
+import { loginModel, updateSessionExipireAtModel, getLastSessionOperationModel } from '../models/sessionModel';
 /**
  * Session controller
  * @test test/unit/controllers/Session.test.ts
@@ -16,7 +16,7 @@ import { loginModel } from '../models/sessionModel';
   * @returns {Object}
   */
 export const loginController = async (auth: AuthInput) => {
-  logger.debug(`signupController`, auth)
+  logger.debug(`loginController`, auth)
 
   try {
 
@@ -33,13 +33,13 @@ export const loginController = async (auth: AuthInput) => {
     } = response
 
     if (success) {
-      // const refreshSecret = process.env.JWT_REFRESH_KEY + user.id;
 
-      const [token, refreshToken] = createTokens({ payload: user || '', refreshSecret: 'aaaa' });
+      const [token, refreshToken] = createTokens({ payload: user || '', refreshSecret: 'JWT_REFRESH_KEY' });
+      await updateSessionExipireAtModel({ id: user.id, lastSessionOperation: 'login' })
 
       await createLogModel({
         data: response,
-        user_id: 1,
+        user_id: user.id || 0,
         type: 'login'
       })
 
@@ -62,18 +62,27 @@ export const loginController = async (auth: AuthInput) => {
 };
 
 
-export const logoutController = async ({ param }: any) => {
+export const logoutController = async (params: any) => {
   logger.debug(`logoutController`)
+  const { user, token } = params
+
+  await updateSessionExipireAtModel({ id: user.id, lastSessionOperation: 'logout' })
+
   await createLogModel({
-    data: {},
-    user_id: 1,
+    data: { token },
+    user_id: user.id,
     type: 'logout'
   })
 
   return await {
     action: 'logout',
-    message: 'Closing session...'
+    user: user.name,
+    message: 'Closed session...'
   }
 
-  //return await logoutModel({ param })
+};
+
+export const getLastSessionOperationController = async (id: any) => {
+  logger.debug(`getLastSessionOperationController`)
+  return await getLastSessionOperationModel(id)
 };

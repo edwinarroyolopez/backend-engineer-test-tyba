@@ -1,6 +1,6 @@
 
 import bcrypt from "bcrypt";
-import { AuthInput, AuthPayload } from '../interfaces/index'
+import { AuthInput } from '../interfaces/index'
 import { logger } from '../utils/logger'
 import { queryHandler, SCHEMA } from "../database/db";
 
@@ -52,22 +52,37 @@ export const loginModel = async (auth: AuthInput) => {
 };
 
 
-export const logoutModel = async ({ param }: any) => {
-  logger.debug(`logoutModel`)
+export const updateSessionExipireAtModel = async ({ id, lastSessionOperation }: { id: any, lastSessionOperation: string }) => {
+  logger.debug(`updateSessionExipireAtModel`)
   try {
-    //throw 'Wrong in token!';
-
-    return await {
-      action: 'logout',
-      success: true,
-      message: `Login-> `
-    }
+    await queryHandler(
+      `UPDATE 
+          ${SCHEMA}.user
+       SET
+       last_session_operation='${lastSessionOperation}',
+        updated_at=current_timestamp
+       WHERE id=${id}`,
+      []
+    );
+    return await { success: true }
   } catch (error) {
-    logger.error(`logoutModel`, { error })
-    return {
-      action: 'logout',
-      success: false,
-      error: error
-    }
+    logger.error('updateSessionExipireAtModel', error);
+    return await { success: false, error }
   }
 };
+
+export const getLastSessionOperationModel = async ({ id }: { id: any }) => {
+  logger.debug(`getLastSessionOperationModel`, id)
+  try {
+    const { rows } = await queryHandler(
+      `SELECT last_session_operation FROM ${SCHEMA}.user where id = '${id}'`,
+      [])
+      logger.debug(`rows`, rows)
+    const { last_session_operation: lastSessionOperation } = rows[0]
+    return await { success: true, lastSessionOperation }
+  } catch (error) {
+    logger.error('updateSessionExipireAtModel', error);
+    return await { success: false, error }
+  }
+}
+

@@ -88,18 +88,24 @@
     - ✅ Create a Log to Logout
     - ✅ Create a Log to Map Search
     - ✅ Find logs
-12. ⬜️ Use Auth with token
-    - ⬜️ Send token in headers
-    - ⬜️ Public routes
-    - ⬜️ Private routes
-13. ⬜️ Unit test
+12. ✅ Use Auth with token
+    - ✅ Send token in headers
+    - ✅ Public routes
+        - ✅ login
+    - ✅ Private routes
+13. ✅ Logout Logic ⭐️ ⭐️ ⭐️ 
+14. ✅ Set token as global var in postman
+15. ⬜️ Send email or sms signup
+    - ⬜️ mail
+    - ⬜️ sms
+15. ⬜️ Unit test
     - ✅ Mount structure
     - ✅ Unit test can be run
     - ⬜️ Session.test
     - ⬜️ Users.test
     - ⬜️ Restaurants.test
     - ⬜️ Logs.test
-14. ⬜️ DataStudio Reports
+16. ⬜️ DataStudio Reports
 
 ## __Status task__
 ⬜️ Pending
