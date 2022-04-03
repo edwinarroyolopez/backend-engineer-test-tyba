@@ -58,6 +58,8 @@ export const signupModel = async (user: UserInput) => {
         address,
         city]
     );
+    logger.debug('rows', rows)
+
     const userRegistered = rows[0]
     delete userRegistered.password;
 
@@ -84,7 +86,7 @@ export const signupModel = async (user: UserInput) => {
   * Get all users
   * @returns {Object}
   */
- export const getAllUsersModel = async (): Promise<any> => {
+export const getAllUsersModel = async (): Promise<any> => {
   logger.debug('getAllUsersModel')
 
   try {
@@ -106,7 +108,7 @@ export const signupModel = async (user: UserInput) => {
 
   } catch (error) {
     logger.error('getAllUsersModel', error)
-    return { success: false, error: error, users:[] };
+    return { success: false, error: error, users: [] };
   }
 };
 

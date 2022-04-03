@@ -19,6 +19,7 @@ export const signupController = async (user: UserInput) => {
 
   const response = await signupModel(user)
   try {
+    logger.error(`signupController`, { response })
 
     const { userRegistered }: any = response
     logger.error(`signupController`, { userRegistered })

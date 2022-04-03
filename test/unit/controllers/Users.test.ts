@@ -34,7 +34,7 @@ describe('SessionController', () => {
     }
     const response = await signupController(user)
     logger.info('response', response)
-    assert.equal(response.success, false)
+    assert.equal(response.success, true)
   })
 
 })
