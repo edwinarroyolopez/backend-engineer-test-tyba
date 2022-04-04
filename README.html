@@ -1,0 +1,137 @@
+<div id="container-readme" style="margin:auto; max-width:max-content;">
+    <h1 id="backend-engineer-test">Backend Engineer Test</h1>
+    <p><code>node --version v13.14.0</code></p>
+    <h2 id="to-run">To Run</h2>
+    <ul>
+        <li><code>npm i</code></li>
+        <li><code>npm start</code></li>
+        <li>Open in your browser <code>http://localhost:6001</code></li>
+    </ul>
+    <h2 id="to-run-unit-test">To Run Unit Test</h2>
+    <ul>
+        <li><code>npm run test</code></li>
+    </ul>
+    <h2 id="routes">Routes</h2>
+    <ul>
+        <li><code>http://localhost:6001/signup</code></li>
+        <li><code>http://localhost:6001/login</code></li>
+        <li><code>http://localhost:6001/logout</code></li>
+        <li><code>http://localhost:6001/get-restaurants</code></li>
+        <li><code>http://localhost:6001/get-users</code></li>
+        <li><code>http://localhost:6001/logs/userId</code></li>
+        <li><code>http://localhost:6001/logs</code></li>
+    </ul>
+    <h2 id="postman-collection">Postman collection</h2>
+    <p><img src="https://scontent-bog1-1.xx.fbcdn.net/v/t1.6435-1/107800951_3061159633962395_886217213345086584_n.png?stp=dst-png_p148x148&amp;_nc_cat=101&amp;ccb=1-5&amp;_nc_sid=1eb0c7&amp;_nc_eui2=AeGigQfDMoENaCpINbK8Z-gg18wthNFdaSXXzC2E0V1pJfDDqVooa7gG0mGZo3WR9YSCp80oz4jSGzeztvyp20kU&amp;_nc_ohc=x8XYgestwLoAX9-SFJl&amp;_nc_ht=scontent-bog1-1.xx&amp;oh=00_AT-vxavQCU-hwDhH7BmSwum26GLPYe6F8ygYL55CzsJn3w&amp;oe=626FA8D5"
+            alt=""></p>
+    <p><code>docs/Backend-engineer-tyba.postman_collection.json</code>: Postman collection route</p>
+    <h2 id="folder-structure">Folder Structure</h2>
+    <p><code>src/routes</code> : All coding and functions related endpoints.</p>
+    <p><code>src/interfaces</code> : Interfaces to ts.</p>
+    <p><code>src/controllers</code> : All coding and functions related controllers.</p>
+    <p><code>src/models</code> : All coding and functions related models.</p>
+    <p><code>src/utils</code> : All coding and functions related utils.</p>
+    <p><code>src/database</code> : Conexion to database</p>
+    <p><code>test</code> : All coding and functions related unit test.</p>
+    <p><code>docs</code> : All about documentation</p>
+    <h2 id="-general-tasks-"><strong>General</strong> <strong>tasks</strong></h2>
+    <ol>
+        <li>✅ Create a repository</li>
+        <li>✅ Install dependencies</li>
+        <li>✅ Create a server with express</li>
+        <li>✅ Utils <ul>
+                <li>✅ Handler Logs</li>
+                <li>✅ Interfaces</li>
+                <li>✅ Generate tokes</li>
+            </ul>
+        </li>
+        <li>✅ Create Routes<ul>
+                <li>✅ Signup</li>
+                <li>✅ Login</li>
+                <li>✅ logout</li>
+                <li>✅ Get restaurants</li>
+                <li>✅ Get logs</li>
+            </ul>
+        </li>
+        <li>✅ Create postman collection</li>
+        <li>✅ Controllers<ul>
+                <li>✅ Create Controllers</li>
+                <li>✅ Connect Routes with Controllers<ul>
+                        <li>✅ SessionController</li>
+                        <li>✅ UsersController</li>
+                        <li>✅ RestaurantsController</li>
+                        <li>✅ LogsController</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>✅ Models<ul>
+                <li>✅ Create models</li>
+                <li>✅ Connect Controllers with Models<ul>
+                        <li>✅ SessionModel</li>
+                        <li>✅ UsersModel</li>
+                        <li>✅ RestaurantsModel</li>
+                        <li>✅ LogsModel</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>✅ Connect with a maps api to get Restaurants<ul>
+                <li>✅ Add Colombia locations</li>
+                <li>✅ Make a test search Restaurants</li>
+                <li>✅ Make a test search by lat, lng and city Restaurants ⭐️ ⭐️</li>
+            </ul>
+        </li>
+        <li>✅ Connect Models with db<ul>
+                <li>✅ Create a public db</li>
+                <li>✅ Create tables<ul>
+                        <li>✅ Users table</li>
+                        <li>✅ Logs table</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>✅ Database Operations<ul>
+                <li>✅ Create user</li>
+                <li>✅ Find user to login</li>
+                <li>✅ Find all users</li>
+                <li>✅ Create a Log</li>
+                <li>✅ Create a Log to Logout</li>
+                <li>✅ Create a Log to Map Search</li>
+                <li>✅ Find logs</li>
+            </ul>
+        </li>
+        <li>✅ Use Auth with token<ul>
+                <li>✅ Send token in headers</li>
+                <li>✅ Public routes<ul>
+                        <li>✅ login</li>
+                    </ul>
+                </li>
+                <li>✅ Private routes</li>
+            </ul>
+        </li>
+        <li>✅ Logout Logic ⭐️ ⭐️ ⭐️ </li>
+        <li>✅ Set token as global var in postman</li>
+        <li>❌ Send email or sms signup<ul>
+                <li>❌ mail</li>
+                <li>❌ sms</li>
+            </ul>
+        </li>
+        <li>⬜️ Unit test<ul>
+                <li>✅ Mount structure</li>
+                <li>✅ Unit test can be run</li>
+                <li>⬜️ Session.test</li>
+                <li>⬜️ Users.test</li>
+                <li>⬜️ Restaurants.test</li>
+                <li>⬜️ Logs.test</li>
+            </ul>
+        </li>
+        <li>❌ DataStudio Reports</li>
+    </ol>
+    <h2 id="__status-task__"><strong>Status task</strong></h2>
+    <p>⬜️ Pending
+        ✅ Ready
+        ❌ Fail
+        🕒 Progress
+        ⭐️ <em>Difficulty Level</em></p>
+</div>

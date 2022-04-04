@@ -22,13 +22,8 @@ const port = process.env.API_PORT || 3000;
 app.use(routes);
 
 app.get('/', async (req, res) => {
-    const params: QueryMaps = {
-        lat: '1',
-        lng: '2',
-        city: ''
-    }
-    const response = await searchPlaces(params)
-    res.send(response);
+    logger.info(`This is the backend engineer test to Tyba!`);
+    res.sendFile('./README.html', {root: __dirname })
 });
 
 
