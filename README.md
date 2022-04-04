@@ -11,15 +11,15 @@
 - ```npm run test```
 
 ## Routes
-
-- ```http://localhost:6001/signup```
-- ```http://localhost:6001/login```
-- ```http://localhost:6001/logout```
-- ```http://localhost:6001/get-restaurants```
-- ```http://localhost:6001/get-users```
-- ```http://localhost:6001/logs/userId```
-- ```http://localhost:6001/logs```
-
+* Publics
+    - ```http://localhost:6001/signup```
+    - ```http://localhost:6001/login```
+* Privates
+    - ```http://localhost:6001/logout```
+    - ```http://localhost:6001/get-restaurants```
+    - ```http://localhost:6001/get-users```
+    - ```http://localhost:6001/logs/userId```
+    - ```http://localhost:6001/logs```
 
 ## Postman collection
 ![][1]
@@ -91,6 +91,7 @@
 12. ✅ Use Auth with token
     - ✅ Send token in headers
     - ✅ Public routes
+        - ✅ signup
         - ✅ login
     - ✅ Private routes
 13. ✅ Logout Logic ⭐️ ⭐️ ⭐️ 

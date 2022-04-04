@@ -12,10 +12,11 @@ import { getRestaurantsModel } from '../models/restaurantsModel';
 /**
   * Get restaurants by latitude and longitude  or city
   * @param {QueryMaps} qRestaurants
+  * @param {Object} user
   *
   * @returns {Array}
   */
-export const getRestaurantsController = async (qRestaurants: QueryMaps) => {
+export const getRestaurantsController = async ({ qRestaurants, user }: { qRestaurants: QueryMaps, user: any }) => {
   logger.debug(`getRestaurantsController`, { qRestaurants })
 
   const restaurants = await searchPlaces(qRestaurants)
@@ -24,7 +25,7 @@ export const getRestaurantsController = async (qRestaurants: QueryMaps) => {
 
   await createLogModel({
     data: { query: qRestaurants, length: restaurants.data.length, restaurants },
-    user_id: 1,
+    user_id: user.id,
     type: 'get-restaurants'
   })
 
