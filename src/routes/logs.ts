@@ -8,15 +8,19 @@ export const getUserLogs = async (req: any, res: any) => {
     logger.debug('req', { query, params })
 
     /* TODO: validate params */
+    try {
+        const {
+            userId
+        } = params
 
-    const {
-        userId
-    } = params
-
-    const response = await getUserLogsController(userId)
-    if (isAuthorized(req)) {
-        res.send(response);
-    } else {
+        const response = await getUserLogsController(userId)
+        if (isAuthorized(req)) {
+            res.send(response);
+        } else {
+            return res.status(403).send("Access Denied");
+        }
+    } catch (error) {
+        logger.error('logs', { error })
         return res.status(403).send("Access Denied");
     }
 }
@@ -25,14 +29,20 @@ export const getLogs = async (req: any, res: any) => {
     logger.trace('getLogs');
     const { query, params } = req
     logger.debug('req', { query, params })
-    if (isAuthorized(req)) {
-        /* TODO: limit */
-        /* TODO: order */
-        const { limit, order }: { limit: string, order: string } = { limit: '10', order: 'desc' }
 
-        const response = await getLogsController({ limit, order })
-        res.send(response);
-    } else {
+    try {
+        if (isAuthorized(req)) {
+            /* TODO: limit */
+            /* TODO: order */
+            const { limit, order }: { limit: string, order: string } = { limit: '10', order: 'desc' }
+
+            const response = await getLogsController({ limit, order })
+            res.send(response);
+        } else {
+            return res.status(403).send("Access Denied");
+        }
+    } catch (error) {
+        logger.error('logs', { error })
         return res.status(403).send("Access Denied");
     }
 }
