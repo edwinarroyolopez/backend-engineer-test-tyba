@@ -2,6 +2,11 @@
 
 ```node --version v13.14.0```
 
+# Run with Docker
+- ```docker build . -t backend-engineer-tyba```
+- ```docker run -p YOUR_PORT:6001 -d  backend-engineer-tyba```
+__Note:__ Replace 6001 to YOUR_PORT
+
 ## To Run
 - ```npm i```
 - ```npm start```
