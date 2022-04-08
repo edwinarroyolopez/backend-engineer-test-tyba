@@ -1,6 +1,13 @@
 <div id="container-readme" style="margin:auto; max-width:max-content;">
     <h1 id="backend-engineer-test">Backend Engineer Test</h1>
     <p><code>node --version v13.14.0</code></p>
+    <h2 id="run-with-docker">Run with Docker</h2>
+    <ul>
+        <li><code>docker build . -t backend-engineer-tyba</code></li>
+        <li><code>docker run -p YOUR_PORT:6001 -d  backend-engineer-tyba</code>
+            <strong>Note:</strong> Replace 6001 to YOUR_PORT
+        </li>
+    </ul>
     <h2 id="to-run">To Run</h2>
     <ul>
         <li><code>npm i</code></li>
@@ -26,8 +33,6 @@
                 <li><code>http://localhost:6001/logs</code></li>
             </ul>
         </li>
-    </ul>
-
     </ul>
     <h2 id="postman-collection">Postman collection</h2>
     <p><img src="https://scontent-bog1-1.xx.fbcdn.net/v/t1.6435-1/107800951_3061159633962395_886217213345086584_n.png?stp=dst-png_p148x148&amp;_nc_cat=101&amp;ccb=1-5&amp;_nc_sid=1eb0c7&amp;_nc_eui2=AeGigQfDMoENaCpINbK8Z-gg18wthNFdaSXXzC2E0V1pJfDDqVooa7gG0mGZo3WR9YSCp80oz4jSGzeztvyp20kU&amp;_nc_ohc=x8XYgestwLoAX9-SFJl&amp;_nc_ht=scontent-bog1-1.xx&amp;oh=00_AT-vxavQCU-hwDhH7BmSwum26GLPYe6F8ygYL55CzsJn3w&amp;oe=626FA8D5"
@@ -122,7 +127,7 @@
         <li>✅ Logout Logic ⭐️ ⭐️ ⭐️ </li>
         <li>✅ Set token as global var in postman</li>
         <li>❌ Send email or sms signup<ul>
-                <li>❌ mail</li>
+                <li>❌ email</li>
                 <li>❌ sms</li>
             </ul>
         </li>
